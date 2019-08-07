@@ -3,12 +3,10 @@ steps:
   args: ['build']
 - name: 'gcr.io/cloud-builders/go'
   args: ['test']
-- name: 'gcr.io/cloud-builders/go'
-  args: ['build']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/$PROJECT_ID/gcb-docker-compose:latest', '.']
 - name: 'docker/compose:1.15.0'
   args: ['up', '-d']
-  env:
+  env:go run main.go
   - 'PROJECT_ID=$PROJECT_ID'
 images: ['gcr.io/$PROJECT_ID/gcb-docker-compose:latest']

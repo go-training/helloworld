@@ -3,11 +3,11 @@ steps:
   args: ['install', '.']
   env: ['PROJECT_ROOT=helloworld']
 - name: 'gcr.io/cloud-builders/go'
-  args: ['build', 'hello']
-  env: ['PROJECT_ROOT=hello']
+  args: ['build', 'helloworld']
+  env: ['PROJECT_ROOT=helloworld']
 - name: 'gcr.io/cloud-builders/go'
   args: ['test']
-  env: ['PROJECT_ROOT=hello']
+  env: ['PROJECT_ROOT=helloworld']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/$PROJECT_ID/gcb-docker-compose:latest', '.']
 - name: 'docker/compose:1.15.0'

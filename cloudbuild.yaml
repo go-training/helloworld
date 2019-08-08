@@ -1,17 +1,27 @@
 steps:
 - name: 'gcr.io/cloud-builders/go'
+  id: Install Go
   args: ['install', '.']
-  env: ['PROJECT_ROOT=helloworld']
+  env: ['PROJECT_ROOT=hello-go-cloud']
 - name: 'gcr.io/cloud-builders/go'
-  args: ['build', 'helloworld']
-  env: ['PROJECT_ROOT=helloworld']
+  id: Build
+  args: ['build', 'hello-go-cloud']
+  env: ['PROJECT_ROOT=hello-go-cloud']
 - name: 'gcr.io/cloud-builders/go'
+  id: Test
   args: ['test']
-  env: ['PROJECT_ROOT=helloworld']
+  env: ['PROJECT_ROOT=hello-go-cloud']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/$PROJECT_ID/gcb-docker-compose:latest', '.']
-- name: 'docker/compose:1.15.0'
-  args: ['up', '-d']
+  id: Container Build 
+  args:
+  - 'build'
+  - '-t'
+  - 'gcr.io/$PROJECT_ID/hello-go-cloud::$SHORT_SHA'
+  - '.'
+- name: 'gcr.io/cloud-builders/docker'
+  id: Push
+  args:
+  - 'push'
+  - 'gcr.io/$PROJECT_ID/hello-go-cloud::$SHORT_SHA'
   env:
   - 'PROJECT_ID=$PROJECT_ID'
-images: ['gcr.io/$PROJECT_ID/gcb-docker-compose:latest']

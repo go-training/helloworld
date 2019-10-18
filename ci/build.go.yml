@@ -1,0 +1,25 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: golang
+    tag: 1.12.7-stretch
+
+inputs:
+  - name: repo
+
+outputs:
+  - name: artifacts
+
+run:
+  path: sh
+  args:
+    - -exc
+    - |
+      export DEFAULT_DIR=$(pwd)
+      echo "test repo ..."
+      go test -v ..
+      go build -o hw
+      mv hw $DEFAULT_DIR/artifacts

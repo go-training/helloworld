@@ -20,6 +20,6 @@ run:
     - |
       export DEFAULT_DIR=$(pwd)
       echo "test repo ..."
-      go test -v ..
+      go test
       go build -o hw
       mv hw $DEFAULT_DIR/artifacts

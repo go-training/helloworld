@@ -8,4 +8,5 @@ func helloworld() string {
 
 func main() {
 	fmt.Println(helloworld())
+	fmt.Println("I am using github")
 }

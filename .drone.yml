@@ -5,6 +5,11 @@ name: default
 steps:
 - name: backend
   image: golang
+  environment:
+    USERNAME:
+      from_secret: username
   commands:
   - go build
   - go test
+  - echo $$USERNAME
+  - echo $USERNAME

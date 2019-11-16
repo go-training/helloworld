@@ -11,5 +11,4 @@ steps:
   commands:
   - go build
   - go test
-  - echo $$USERNAME
   - echo $USERNAME

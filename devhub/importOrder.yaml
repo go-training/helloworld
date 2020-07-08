@@ -1,0 +1,43 @@
+version: v4.0
+navigator:
+    name: Marcelo
+    email: m.melo@aurea.com
+repo:
+    companyName: Aurea
+    productName: GoHelloWorld
+    repoUrl: https://github.com/trilogy-group/helloworld
+    repoType: Deployable service
+    githubTokenSecretId: ""
+    branch: master
+buildDeps: []
+build:
+    techStack: Go
+    os: Ubuntu 16.04
+    image: ""
+    toolchainVersion: Go 1.14
+    tool: Go
+    preBuildCommand: echo skip
+    buildCommand: go build -a -o target/helloworld
+test:
+    utFramework: testing
+    preTestCommand: echo skip
+    testCommand: echo skip
+package:
+    packageTool: go
+    packageCommand: echo skip
+    artifactDir: ./target
+    artifactUploadCommand: echo skip
+deploy:
+    serviceName: helloworldsvcname
+    deploymentCheck: curl http://localhost:8000
+    stickySessions: ""
+    canUseLb: ""
+    stablePersistence: ""
+    fixedNetworkIdentifier: ""
+run:
+    dockerized: true
+    os: ""
+envs:
+  - name: qa
+    default: true
+    vars: null

@@ -7,5 +7,8 @@ func helloworld() string {
 }
 
 func main() {
-	fmt.Println(helloworld())
+	for {
+		fmt.Println(helloworld())
+	}
+
 }

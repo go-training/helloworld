@@ -1,4 +1,4 @@
 FROM golang:stretch
-
-CMD go run ../main.go
-
+COPY target/helloworld .
+RUN chmod +x helloworld
+CMD helloworld

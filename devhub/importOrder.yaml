@@ -37,6 +37,12 @@ deploy:
 run:
     dockerized: true
     os: ""
+ports:
+  - name: http
+    number: "8080"
+    protocol: HTTP
+    public: true
+    path: /
 envs:
   - name: qa
     default: true

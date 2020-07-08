@@ -1,6 +1,9 @@
 version: v1
 productName: GoHelloWorld
 buildEnvVars:
+  - key: LC_ALL
+    kind: config
+    value: C.UTF-8
   - key: GOROOT
     kind: config
     value: /go/go1.14
@@ -8,9 +11,6 @@ buildEnvVars:
     kind: config
     value: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/go/go1.14/bin
   - key: LANG
-    kind: config
-    value: C.UTF-8
-  - key: LC_ALL
     kind: config
     value: C.UTF-8
   - key: PIPELINE_INIT_COMMAND

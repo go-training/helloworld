@@ -1,0 +1,35 @@
+version: v1
+productName: GoHelloWorld
+buildEnvVars:
+  - key: LC_ALL
+    kind: config
+    value: C.UTF-8
+  - key: GOROOT
+    kind: config
+    value: /go/go1.14
+  - key: PATH
+    kind: config
+    value: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/go/go1.14/bin
+  - key: LANG
+    kind: config
+    value: C.UTF-8
+  - key: PIPELINE_INIT_COMMAND
+    kind: config
+    value: echo 'No init commands provided'
+build:
+    image: 652819854130.dkr.ecr.us-east-1.amazonaws.com/devhub/builder-xenial-go
+    platform: linux
+    preBuildCommand: echo skip
+    buildCommand: go build -a -o target/helloworld
+test:
+    preTestCommand: echo skip
+    testCommand: echo skip
+package:
+    artifactRepoType: raw
+    packageCommand: echo skip
+    artifactDir: ./target
+    artifactUploadCommand: echo skip
+repoType: Deployable service
+release:
+    targetChartFile: helloworldsvcname
+    dockerized: true

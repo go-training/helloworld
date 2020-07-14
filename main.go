@@ -9,7 +9,7 @@ import (
 func handler(w http.ResponseWriter, r *http.Request) {
 	var name, _ = os.Hostname()
 
-	fmt.Fprintf(w, "<h1>Marcelo Test: This request was processed by pod: %s</h1><h1>fix-test1 branch</h1>\n", name)
+	fmt.Fprintf(w, "<h2>Marcelo Test: This request was processed by pod: %s</h2><h2>fix-test1 branch</h2>\n", name)
 }
 
 func main() {

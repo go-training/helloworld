@@ -16,7 +16,7 @@ spec:
         "kubernetes.io/os": linux
       containers:
       - name: helloworld
-        image: 
+        image: <image>
         resources:
           requests:
             cpu: 100m

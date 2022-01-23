@@ -6,8 +6,8 @@ env:
   REGISTRY_NAME: {registry-name}
   CLUSTER_NAME: {cluster-name}
   CLUSTER_RESOURCE_GROUP: {resource-group-name}
-  NAMESPACE: {namespace-name}
-  APP_NAME: {app-name}
+#  NAMESPACE: {namespace-name}
+#  APP_NAME: {app-name}
   
 jobs:
   build:

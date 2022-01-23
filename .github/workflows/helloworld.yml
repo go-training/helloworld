@@ -1,3 +1,7 @@
+name: helloworld
+
+on: push
+
 env:
   REGISTRY_NAME: {registry-name}
   CLUSTER_NAME: {cluster-name}

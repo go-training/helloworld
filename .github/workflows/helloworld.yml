@@ -53,6 +53,9 @@ jobs:
         namespace: ${{ env.NAMESPACE }}
         arguments: --force true
 
+    - run: |
+        sed -i -e "s|_IMAGE_|${{ env.REGISTRY_NAME }}.azurecr.io/${{ env.APP_NAME }}:${{ github.sha }}|g" ${{ github.workspace }}/manifests/deployment.yaml
+      
     # Deploy app to AKS
     - uses: azure/k8s-deploy@v1
       with:

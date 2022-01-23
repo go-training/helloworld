@@ -6,7 +6,7 @@ on: [push]
 env:
   REGISTRY_NAME: moussa
   CLUSTER_NAME: mou
-  CLUSTER_RESOURCE_GROUP: {resource-group-name}
+  CLUSTER_RESOURCE_GROUP: myResourceGroup
   NAMESPACE: default
   SECRET: mou
   APP_NAME: PORT

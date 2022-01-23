@@ -1,6 +1,6 @@
 NAME            = helloworld
-REPO            = qaas/$(NAME)
-REGISTRY        = m3274968.gra5.container-registry.ovh.net
+REPO            = helloworld
+REGISTRY        = moussa.azurecr.io
 TAG             = latest
 
 all: 

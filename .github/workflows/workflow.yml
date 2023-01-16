@@ -27,5 +27,6 @@ jobs:
         uses: swashbuck1r/docker-action-dump@v1
       - name: Dump /home files
         run: |
-          find /home -print
+          ls -al /home
+          # find /home -print
       - run: echo "🍏 This job's status is ${{ job.status }}."

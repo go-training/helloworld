@@ -20,9 +20,9 @@ jobs:
       - name: Dump environment
         run: |
           env | sort
-      - name: Dump /github files
-        run: |
-          find /github -print
+      # - name: Dump /github files
+      #   run: |
+      #     find /github -print
       - name: Action dump
         uses: swashbuck1r/docker-action-dump@v1
       - run: echo "🍏 This job's status is ${{ job.status }}."

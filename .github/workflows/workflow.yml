@@ -17,7 +17,12 @@ jobs:
           ls ${{ github.workspace }}
           echo "---Current working dir---"
           pwd
-          echo "---Environment---"
-          env
+      - name: Dump environment
+        run: |
+          env | sort
+      - name: Dump files
+        run: |
           find . -print
+      - name: Action dump
+        uses: swashbuck1r/docker-action-dump@v1
       - run: echo "🍏 This job's status is ${{ job.status }}."

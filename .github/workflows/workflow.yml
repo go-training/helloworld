@@ -17,12 +17,15 @@ jobs:
           ls ${{ github.workspace }}
           echo "---Current working dir---"
           pwd
-      - name: Dump environment
+      - name: Dump environment1
         run: |
           env | sort
       # - name: Dump /github files
       #   run: |
       #     find /github -print
+      - name: Dump environment2
+        run: |
+          env | sort
       - name: Action dump
         uses: swashbuck1r/docker-action-dump@v1
       - name: Dump /home files

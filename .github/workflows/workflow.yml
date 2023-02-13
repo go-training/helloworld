@@ -23,6 +23,12 @@ jobs:
       # - name: Dump /github files
       #   run: |
       #     find /github -print
+      - name: Set output
+        run: |-
+          echo myOutput=myOutputValue >> $GITHUB_OUTPUT
+          echo MYENV=myEnvValue >> $GITHUB_ENV
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+          echo "example_1 Added some variables" >> $GITHUB_STEP_SUMMARY
       - name: Dump environment2
         run: |
           env | sort

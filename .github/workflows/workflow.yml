@@ -38,8 +38,8 @@ jobs:
         run: |
           ls -al /home
           # find /home -print
-      - name: Write /goo file
-        run: echo "hello goo" > /goo
-      - name: List /goo file
-        run: ls -al /goo
+      - name: Write /tmp/goo file
+        run: echo "hello goo" > /tmp/goo
+      - name: List /tmp/goo file
+        run: ls -al /tmp/goo
       - run: echo "🍏 This job's status is ${{ job.status }}."

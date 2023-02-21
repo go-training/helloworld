@@ -44,4 +44,7 @@ jobs:
         run: echo "hello goo" > /tmp/goo
       - name: List /tmp/goo file
         run: ls -al /tmp/goo
+      - name: OS Architecture
+        image: bash:alpine3.16
+        run: uname -a
       - run: echo "🍏 This job's status is ${{ job.status }}."

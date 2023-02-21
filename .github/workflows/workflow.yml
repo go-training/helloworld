@@ -50,5 +50,5 @@ jobs:
     container:
       image: bash:alpine3.16
     steps:
-      - name: OS Architecture
-        run: uname -a
+      - name: OS Release
+        run: cat /etc/os-release

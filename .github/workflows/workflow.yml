@@ -50,12 +50,12 @@ jobs:
   say_hello_from_env:
     runs-on: ubuntu-latest
     env:
-      JOB_MESSSAGE: 'Hello from the job environment!'
+      JOB_MESSAGE: 'Hello from the job environment!'
     steps:
       - name: Say hello based on workflow env
-        run: echo "$WORKFLOW_MESSSAGE"
+        run: echo "$WORKFLOW_MESSAGE"
       - name: Say hello based on job env
-        run: echo "$JOB_MESSSAGE"
+        run: echo "$JOB_MESSAGE"
       - name: Say hello based step env
         run: echo "$STEP_MESSAGE"
         env:

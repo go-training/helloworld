@@ -1,6 +1,8 @@
 name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
+env:
+  WORKFLOW_MESSAGE: 'Hello from the workflow environment!'
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
@@ -45,10 +47,17 @@ jobs:
       - name: List /tmp/goo file
         run: ls -al /tmp/goo
       - run: echo "🍏 This job's status is ${{ job.status }}."
-  Container-job:
+  say_hello_from_env:
     runs-on: ubuntu-latest
-    container:
-      image: bash:alpine3.16
+    env:
+      JOB_MESSSAGE: 'Hello from the job environment!'
     steps:
-      - name: OS Release
-        run: cat /etc/os-release
+      - name: Say hello based on workflow env
+        run: echo "$WORKFLOW_MESSSAGE"
+      - name: Say hello based on job env
+        run: echo "$JOB_MESSSAGE"
+      - name: Say hello based step env
+        run: echo "$STEP_MESSAGE"
+        env:
+          STEP_MESSAGE: 'Hello from the step environment!'
+

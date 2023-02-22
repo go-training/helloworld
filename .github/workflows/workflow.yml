@@ -60,4 +60,15 @@ jobs:
         run: echo "$STEP_MESSAGE"
         env:
           STEP_MESSAGE: 'Hello from the step environment!'
+  share_hello_files:
+    runs-on: ubuntu-latest
+    steps:
+    - name: step1
+      run: echo "hello-step1" >> $HOME/hello.txt
+    - name: step2
+      run: echo "hello-step2" >> $HOME/hello.txt
+    - name: step3
+      run: echo "hello-step3" >> $HOME/hello.txt
+    - name: print hello.txt
+      run: cat $HOME/hello.txt
 

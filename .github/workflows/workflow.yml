@@ -4,7 +4,7 @@ on: [push]
 env:
   WORKFLOW_MESSAGE: 'Hello from the workflow environment!'
 jobs:
-  Explore-GitHub-Actions:
+  Explore-GitHub-Actions2:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."

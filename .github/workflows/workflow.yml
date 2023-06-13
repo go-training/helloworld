@@ -2,7 +2,7 @@ name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 env:
-  WORKFLOW_MESSAGE: 'Hello from the workflow environment!'
+  WORKFLOW_MESSAGE: 'Hello from the workflow environment2!'
 jobs:
   Explore-GitHub-Actions2:
     runs-on: ubuntu-latest

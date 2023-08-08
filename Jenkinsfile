@@ -11,13 +11,13 @@ pipeline {
     
      stage('Build') {
       steps {
-       sh 'rm -rf build && go build'
+       sh 'rm -rf build && go build -o myprogram'
       }
      }
 
     stage('Test') {
       steps {
-        sh 'cd helloworld/ && go test'
+        sh 'go test'
       }
     }
   }
@@ -25,7 +25,7 @@ pipeline {
   post {
     always {
         dir('helloworld') {
-            archiveArtifacts artifacts: 'helloworld', onlyIfSuccessful: true
+            archiveArtifacts artifacts: 'myprogram', onlyIfSuccessful: true
         }
     }
   }

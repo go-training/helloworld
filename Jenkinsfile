@@ -11,8 +11,7 @@ pipeline {
     
      stage('Build') {
       steps {
-       sh 'cd helloworld/ && rm -rf build'
-       sh 'cd helloworld/ && go build'
+       sh 'go build'
       }
      }
 

@@ -10,11 +10,15 @@ pipeline {
   stages {
 
     stage('Go init') {
-        steps{
-        sh 'cd helloworld/'
-        sh 'go mod init helloworld'
-        }
-    }
+     steps {
+      script {
+          def goModExists = fileExists('helloworld/go.mod')
+          if (!goModExists) {
+              sh 'cd helloworld/ && go mod init helloworld'
+          }
+      }
+  }
+}
      stage('Build') {
       steps {
        sh 'cd helloworld/ && rm -rf build && go build -buildmode=pie -buildvcs=false'

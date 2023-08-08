@@ -10,12 +10,12 @@ on:
 jobs:
   build:
     steps:
-      - name: loop for 65 secs
+      - name: loop for 66 secs
         uses: docker://amazon/aws-cli
         shell: bash
         run: |
           echo "until loop"
-          i=65
+          i=66
           until [ $i == 1 ]
           do
               echo "countdown: $i secs";

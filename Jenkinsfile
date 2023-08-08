@@ -8,17 +8,7 @@ pipeline {
 
 
   stages {
-
-    stage('Go init') {
-     steps {
-      script {
-          def goModExists = fileExists('helloworld/go.mod')
-          if (!goModExists) {
-              sh 'cd helloworld/ && go mod init helloworld'
-          }
-      }
-  }
-}
+    
      stage('Build') {
       steps {
        sh 'cd helloworld/ && rm -rf build'

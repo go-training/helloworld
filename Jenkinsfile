@@ -11,7 +11,7 @@ pipeline {
     
      stage('Build') {
       steps {
-       sh 'go build'
+       sh 'rm -rf build && go build'
       }
      }
 

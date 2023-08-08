@@ -17,7 +17,7 @@ pipeline {
     }
      stage('Build') {
       steps {
-       sh 'cd helloworld/ && go build -buildmode=pie -buildvcs=false'
+       sh 'cd helloworld/ && rm -rf build && go build -buildmode=pie -buildvcs=false'
       }
      }
 

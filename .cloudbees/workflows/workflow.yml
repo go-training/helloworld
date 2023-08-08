@@ -10,8 +10,17 @@ on:
 jobs:
   build:
     steps:
-      - name: Say hello
-        uses: docker://golang:1.20.3-alpine3.17
-        shell: sh
+      - name: loop for 65 secs
+        uses: docker://amazon/aws-cli
+        shell: bash
         run: |
-          echo "hello world"
+          echo "until loop"
+          i=65
+          until [ $i == 1 ]
+          do
+              echo "countdown: $i secs";
+              i=$((i-1))
+              sleep 1
+          done
+          echo "i value is $i"
+          echo "loop terminated"

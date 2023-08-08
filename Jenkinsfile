@@ -24,7 +24,6 @@ pipeline {
   
   post {
     always {
-        dir('helloworld') {
             archiveArtifacts artifacts: 'myprogram', onlyIfSuccessful: true
         }
     }

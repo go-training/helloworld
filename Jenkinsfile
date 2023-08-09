@@ -8,10 +8,17 @@ pipeline {
 
 
   stages {
+
+    stage('for dev branch') {
+      when {
+        branch 'dev'
+      }
+      steps {
+        echo 'this is only for brunch dev'
+      }
     
      stage('Build') {
       steps {
-       sh 'go mod init'
        sh 'go build -o myprogram'
       }
      }

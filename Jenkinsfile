@@ -11,6 +11,7 @@ pipeline {
     
      stage('Build') {
       steps {
+       sh 'go mod init'
        sh 'go build -o myprogram'
       }
      }

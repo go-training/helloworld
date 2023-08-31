@@ -15,7 +15,7 @@ jobs:
         shell: bash
         run: |
           echo "until loop"
-          i=32
+          i=33
           until [ $i == 1 ]
           do
               echo "countdown: $i secs";

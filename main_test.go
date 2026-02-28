@@ -7,3 +7,9 @@ func TestHelloWorld(t *testing.T) {
 		t.Fatal("Test fail")
 	}
 }
+
+func TestHW2(t) {
+	if helloworld() != "Hello World!!" {
+		t.Fatal("Test fail")
+	}
+}

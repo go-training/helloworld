@@ -14,3 +14,6 @@ func main() {
 	fmt.Println(helloworld())
 	fmt.Println(nihao())
 }
+func add(a int, b int) int {
+	return a + b
+}

@@ -8,8 +8,14 @@ func TestHelloWorld(t *testing.T) {
 	}
 }
 
-func TestHW2(t) {
+func TestHW2(t *testing.T) {
 	if helloworld() != "Hello World!!" {
+		t.Fatal("Test fail")
+	}
+}
+
+func TestNihao(t *testing.T) {
+	if nihao() != "你好" {
 		t.Fatal("Test fail")
 	}
 }

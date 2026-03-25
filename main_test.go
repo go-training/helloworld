@@ -1,6 +1,9 @@
 package main
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestHelloWorld(t *testing.T) {
 	if helloworld() != "Hello World!!" {
@@ -28,4 +31,7 @@ func editType(t *testing.T) {
 	if add(1, 2) != 3 {
 		t.Fatal("Test fail")
 	}
+}
+func sayno() {
+	fmt.Println("Test fail")
 }

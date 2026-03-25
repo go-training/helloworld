@@ -19,3 +19,13 @@ func TestNihao(t *testing.T) {
 		t.Fatal("Test fail")
 	}
 }
+func addType(t *testing.T) {
+	if add(1, 2) != 3 {
+		t.Fatal("Test fail")
+	}
+}
+func editType(t *testing.T) {
+	if add(1, 2) != 3 {
+		t.Fatal("Test fail")
+	}
+}
